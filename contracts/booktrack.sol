@@ -110,4 +110,22 @@ contract BookTrack is Author, Publisher {
         emit Published(isbn);
     }
 
+    function getBookInfo(uint bookIsbn) public view returns(
+        uint isbn,
+        string title,
+        address owner,
+        uint price,
+        State state,
+        address author,
+        address publisher) {
+
+            isbn = books[bookIsbn].isbn;
+            title = books[bookIsbn].title;
+            owner = books[bookIsbn].owner;
+            price = books[bookIsbn].price;
+            state = books[bookIsbn].state;
+            author = books[bookIsbn].author;
+            publisher = books[bookIsbn].publisher;
+        }
+
 }
