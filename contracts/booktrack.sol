@@ -20,7 +20,7 @@ contract BookTrack is Author, Publisher {
         string title;
         address owner;
         uint price;
-        uint state;
+        State state;
         address author;
         address publisher;
     }
