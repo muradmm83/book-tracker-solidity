@@ -70,7 +70,14 @@ contract BookTrack is Author, Publisher {
     }
 
     function addBook(string memory title, uint price) public onlyAuthor {
-        books[_isbn] = Book({title: title, owner: msg.sender, price: price, author: msg.sender, state: State.Written});
+        books[_isbn] = Book({
+            isbn: _isbn,
+            title: title, 
+            owner: msg.sender, 
+            price: price, 
+            author: msg.sender, 
+            state: State.Written,
+            publisher: address(0)});
 
         emit Written(_isbn);
 
