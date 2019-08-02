@@ -34,7 +34,7 @@ contract BookTrack is Author, Publisher {
     event Published(uint isbn);
 
     modifier written(uint isbn) {
-        require(books[isbin].state == State.Written);
+        require(books[isbn].state == State.Written);
         _;
     }
 
