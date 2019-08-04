@@ -86,7 +86,7 @@ contract BookTrack is Author, Publisher {
 
     function reviewBook(uint isbn) public onlyPublisher written(isbn) {
         books[isbn].state = State.Reviewed;
-        books[isbn].author = msg.sender;
+        books[isbn].publisher = msg.sender;
 
         emit Reviewed(isbn);
     }
